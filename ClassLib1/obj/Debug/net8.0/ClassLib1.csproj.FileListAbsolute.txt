@@ -1,0 +1,13 @@
+C:\Users\karlx\OneDrive\Desktop\Project4-Client\ClassLib1\bin\Debug\net8.0\ClassLib1.deps.json
+C:\Users\karlx\OneDrive\Desktop\Project4-Client\ClassLib1\bin\Debug\net8.0\ClassLib1.dll
+C:\Users\karlx\OneDrive\Desktop\Project4-Client\ClassLib1\bin\Debug\net8.0\ClassLib1.pdb
+C:\Users\karlx\OneDrive\Desktop\Project4-Client\ClassLib1\obj\Debug\net8.0\ClassLib1.csproj.AssemblyReference.cache
+C:\Users\karlx\OneDrive\Desktop\Project4-Client\ClassLib1\obj\Debug\net8.0\ClassLib1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\karlx\OneDrive\Desktop\Project4-Client\ClassLib1\obj\Debug\net8.0\ClassLib1.AssemblyInfoInputs.cache
+C:\Users\karlx\OneDrive\Desktop\Project4-Client\ClassLib1\obj\Debug\net8.0\ClassLib1.AssemblyInfo.cs
+C:\Users\karlx\OneDrive\Desktop\Project4-Client\ClassLib1\obj\Debug\net8.0\ClassLib1.csproj.CoreCompileInputs.cache
+C:\Users\karlx\OneDrive\Desktop\Project4-Client\ClassLib1\obj\Debug\net8.0\ClassLib1.sourcelink.json
+C:\Users\karlx\OneDrive\Desktop\Project4-Client\ClassLib1\obj\Debug\net8.0\ClassLib1.dll
+C:\Users\karlx\OneDrive\Desktop\Project4-Client\ClassLib1\obj\Debug\net8.0\refint\ClassLib1.dll
+C:\Users\karlx\OneDrive\Desktop\Project4-Client\ClassLib1\obj\Debug\net8.0\ClassLib1.pdb
+C:\Users\karlx\OneDrive\Desktop\Project4-Client\ClassLib1\obj\Debug\net8.0\ref\ClassLib1.dll

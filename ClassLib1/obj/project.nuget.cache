@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "GGzAE3eag1EuWqHLpfh3IR45zw18JtXUkzNRxHJ3CShyqvpeMr5vNj5MO0F9zRNfTpwxOuUWpFjGcOZ5VNRiRQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\karlx\\OneDrive\\Desktop\\Project4-Client\\ClassLib1\\ClassLib1.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\karlx\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\karlx\\.nuget\\packages\\restsharp\\112.1.0\\restsharp.112.1.0.nupkg.sha512"
+  ],
+  "logs": []
+}
