@@ -25,3 +25,30 @@ C:\Users\karlx\OneDrive\Desktop\Project4-Client\Project4-Client\obj\Debug\net8.0
 C:\Users\karlx\OneDrive\Desktop\Project4-Client\Project4-Client\obj\Debug\net8.0-windows\Project4-Client.pdb
 C:\Users\karlx\OneDrive\Desktop\Project4-Client\Project4-Client\obj\Debug\net8.0-windows\Project4-Client.genruntimeconfig.cache
 C:\Users\karlx\OneDrive\Desktop\Project4-Client\Project4-Client\obj\Debug\net8.0-windows\ref\Project4-Client.dll
+C:\Users\Karl\Downloads\Project 4 Client\Project4-Client\bin\Debug\net8.0-windows\Project4-Client.exe
+C:\Users\Karl\Downloads\Project 4 Client\Project4-Client\bin\Debug\net8.0-windows\Project4-Client.deps.json
+C:\Users\Karl\Downloads\Project 4 Client\Project4-Client\bin\Debug\net8.0-windows\Project4-Client.runtimeconfig.json
+C:\Users\Karl\Downloads\Project 4 Client\Project4-Client\bin\Debug\net8.0-windows\Project4-Client.dll
+C:\Users\Karl\Downloads\Project 4 Client\Project4-Client\bin\Debug\net8.0-windows\Project4-Client.pdb
+C:\Users\Karl\Downloads\Project 4 Client\Project4-Client\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
+C:\Users\Karl\Downloads\Project 4 Client\Project4-Client\bin\Debug\net8.0-windows\RestSharp.dll
+C:\Users\Karl\Downloads\Project 4 Client\Project4-Client\bin\Debug\net8.0-windows\ClassLib1.dll
+C:\Users\Karl\Downloads\Project 4 Client\Project4-Client\bin\Debug\net8.0-windows\ClassLib1.pdb
+C:\Users\Karl\Downloads\Project 4 Client\Project4-Client\obj\Debug\net8.0-windows\Project4-Client.csproj.AssemblyReference.cache
+C:\Users\Karl\Downloads\Project 4 Client\Project4-Client\obj\Debug\net8.0-windows\MainWindow.g.cs
+C:\Users\Karl\Downloads\Project 4 Client\Project4-Client\obj\Debug\net8.0-windows\App.g.cs
+C:\Users\Karl\Downloads\Project 4 Client\Project4-Client\obj\Debug\net8.0-windows\Project4-Client_MarkupCompile.cache
+C:\Users\Karl\Downloads\Project 4 Client\Project4-Client\obj\Debug\net8.0-windows\Project4-Client_MarkupCompile.lref
+C:\Users\Karl\Downloads\Project 4 Client\Project4-Client\obj\Debug\net8.0-windows\MainWindow.baml
+C:\Users\Karl\Downloads\Project 4 Client\Project4-Client\obj\Debug\net8.0-windows\Project4-Client.g.resources
+C:\Users\Karl\Downloads\Project 4 Client\Project4-Client\obj\Debug\net8.0-windows\Project4-Client.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Karl\Downloads\Project 4 Client\Project4-Client\obj\Debug\net8.0-windows\Project4-Client.AssemblyInfoInputs.cache
+C:\Users\Karl\Downloads\Project 4 Client\Project4-Client\obj\Debug\net8.0-windows\Project4-Client.AssemblyInfo.cs
+C:\Users\Karl\Downloads\Project 4 Client\Project4-Client\obj\Debug\net8.0-windows\Project4-Client.csproj.CoreCompileInputs.cache
+C:\Users\Karl\Downloads\Project 4 Client\Project4-Client\obj\Debug\net8.0-windows\Project4-Client.sourcelink.json
+C:\Users\Karl\Downloads\Project 4 Client\Project4-Client\obj\Debug\net8.0-windows\Project4.A95CD827.Up2Date
+C:\Users\Karl\Downloads\Project 4 Client\Project4-Client\obj\Debug\net8.0-windows\Project4-Client.dll
+C:\Users\Karl\Downloads\Project 4 Client\Project4-Client\obj\Debug\net8.0-windows\refint\Project4-Client.dll
+C:\Users\Karl\Downloads\Project 4 Client\Project4-Client\obj\Debug\net8.0-windows\Project4-Client.pdb
+C:\Users\Karl\Downloads\Project 4 Client\Project4-Client\obj\Debug\net8.0-windows\Project4-Client.genruntimeconfig.cache
+C:\Users\Karl\Downloads\Project 4 Client\Project4-Client\obj\Debug\net8.0-windows\ref\Project4-Client.dll
