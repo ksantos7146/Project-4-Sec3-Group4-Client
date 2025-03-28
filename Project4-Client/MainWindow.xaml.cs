@@ -13,6 +13,7 @@ using System.Windows.Shapes;
 using RestSharp;
 using Newtonsoft.Json;
 using ClassLib1;
+using Project4_Client.Pages;
 
 namespace Project4_Client
 {
@@ -21,61 +22,54 @@ namespace Project4_Client
     /// </summary>
     public partial class MainWindow : Window
     {
+
         public MainWindow()
         {
             InitializeComponent();
+            MainFrame.Navigate(new LoginPage(this)); // Pass reference for navigation
         }
 
-        // global variable
-        EmpConnection.Rootobject result; // store the result of the API Conversion
+
+
+        //public MainWindow()
+        //{
+        //    InitializeComponent();
+        //}
+
+        //// global variable
+        //List<User> allUsers; // store the result of the API Conversion
 
 
 
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            getData();
-        }
+        //private void Button_Click(object sender, RoutedEventArgs e)
+        //{
+        //    getData();
+        //}
 
-        private void getData()
-        {
-            //Calls the API
-            //Needs 'using RestSharp' <-- see line 1!
-            //Source --> https://dummy.restapiexample.com/
-            //API to be used --> https://dummy.restapiexample.com/api/v1/employees
-            //Note the difference, I have chopped off the final bit of the address!
-            var client = new RestClient("https://dummy.restapiexample.com/api/v1/");
+        //private void getData()
+        //{
 
-            var request = new RestRequest("employees");  //The last bit of the api address
-            var response = client.Execute(request);  //Request is ready
+        //    //var client = new RestClient("https://retoolapi.dev/zpuRkh/");
+        //    var client = new RestClient("http://10.144.122.176:5214");
 
-            if (response.StatusCode == System.Net.HttpStatusCode.OK)
-            {
-                string rawResponse = response.Content;  //Raw data (needs refinement!)
+        //    var request = new RestRequest("/api/users");  // the last bit of the api address
+        //    var response = client.Execute(request);  // request is ready
 
-                //Refinement ideally requires "PostMan" as this will show you what the 
-                //data will look like after parsing and then allow you to use
-                //Edit/Paste as JSON classes, I simply copied the structure into the 
-                //Classes below
+        //    if (response.StatusCode == System.Net.HttpStatusCode.OK)
+        //    {
+        //        string rawResponse = response.Content;  //Raw data (needs refinement!)
 
-                //Convert the raw data (next line requires 'using Newton.Json'
-                result = JsonConvert.DeserializeObject<EmpConnection.Rootobject>(rawResponse);
 
-                if (result != null) // if we have some data
-                {
-                    foreach (var obj in result.data) 
-                    {
-                        listBox1.Items.Add(obj.employee_name); // put the employee name into the listbox
-                    }
-                }
+        //        //Convert the raw data (next line requires 'using Newton.Json'
+        //        allUsers = JsonConvert.DeserializeObject<List<User>>(rawResponse);
+        //    }
 
-            }
+        //}
 
-        }
-
-        private void listBox1_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            getData();
-        }
+        //private void listBox1_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        //{
+        //    getData();
+        //}
     }
 }

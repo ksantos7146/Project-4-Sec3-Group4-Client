@@ -18,4 +18,8 @@
     <ProjectReference Include="..\ClassLib1\ClassLib1.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+
 </Project>

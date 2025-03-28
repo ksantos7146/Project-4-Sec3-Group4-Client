@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "BEXZGU4jki4tHHQo1uGCYlIS98NscEv6eoCnbYCJRV1yknrzCT7sVr2nDVG0ccLjKzSBauP0bp1JoFjePL1z/A==",
+  "dgSpecHash": "vMrOUTCVstQN08beTpL2SAMkmWn+wPqFOThv4P3VuW1DLIKDcXzzrUYtJhG96ZPO7CGlZcVmvXWB/bkuyX/kvQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\karlx\\OneDrive\\Desktop\\Project4-Client\\Project4-Client\\Project4-Client.csproj",
+  "projectFilePath": "C:\\Users\\karlx\\OneDrive\\Desktop\\tests during math class lol\\Project-4-Sec3-Group4-Client\\Project4-Client\\Project4-Client.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\karlx\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\karlx\\.nuget\\packages\\restsharp\\112.1.0\\restsharp.112.1.0.nupkg.sha512"

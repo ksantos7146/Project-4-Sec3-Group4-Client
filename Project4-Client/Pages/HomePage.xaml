@@ -1,0 +1,39 @@
+﻿<Page x:Class="Project4_Client.Pages.HomePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Background="#FFF5F7">
+    <Grid Margin="20">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+
+        <!-- Left Arrow -->
+        <Button Grid.Column="0" Content="◀" Width="40" Height="40" Background="#FF4081" Foreground="White" Margin="10"/>
+
+        <!-- About Me Panel -->
+        <StackPanel Grid.Column="1" Margin="20">
+            <TextBlock Text="About Me" FontSize="24" FontWeight="Bold" Foreground="#FF4081" Margin="0,0,0,10"/>
+            <TextBlock Text="Name: Karl" FontSize="16" Margin="0,5"/>
+            <TextBlock Text="Age: 21" FontSize="16" Margin="0,5"/>
+            <TextBlock Text="Bio: Lover of code and coffee" FontSize="16" Margin="0,5" TextWrapping="Wrap"/>
+        </StackPanel>
+
+        <!-- Stick Figure Area -->
+        <Border Grid.Column="2" BorderBrush="#FF4081" BorderThickness="2" CornerRadius="10" Margin="20">
+            <Canvas Background="White">
+                <Ellipse Canvas.Left="100" Canvas.Top="40" Width="50" Height="50" Stroke="Black"/>
+                <Line X1="125" Y1="90" X2="125" Y2="180" Stroke="Black"/>
+                <Line X1="125" Y1="110" X2="90" Y2="140" Stroke="Black"/>
+                <Line X1="125" Y1="110" X2="160" Y2="140" Stroke="Black"/>
+                <Line X1="125" Y1="180" X2="100" Y2="220" Stroke="Black"/>
+                <Line X1="125" Y1="180" X2="150" Y2="220" Stroke="Black"/>
+            </Canvas>
+        </Border>
+
+        <!-- Right Arrow -->
+        <Button Grid.Column="3" Content="▶" Width="40" Height="40" Background="#FF4081" Foreground="White" Margin="10"/>
+    </Grid>
+</Page>

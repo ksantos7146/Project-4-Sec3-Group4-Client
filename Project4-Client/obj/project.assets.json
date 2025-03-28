@@ -119,11 +119,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\karlx\\OneDrive\\Desktop\\Project4-Client\\Project4-Client\\Project4-Client.csproj",
+      "projectUniqueName": "C:\\Users\\karlx\\OneDrive\\Desktop\\tests during math class lol\\Project-4-Sec3-Group4-Client\\Project4-Client\\Project4-Client.csproj",
       "projectName": "Project4-Client",
-      "projectPath": "C:\\Users\\karlx\\OneDrive\\Desktop\\Project4-Client\\Project4-Client\\Project4-Client.csproj",
+      "projectPath": "C:\\Users\\karlx\\OneDrive\\Desktop\\tests during math class lol\\Project-4-Sec3-Group4-Client\\Project4-Client\\Project4-Client.csproj",
       "packagesPath": "C:\\Users\\karlx\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\karlx\\OneDrive\\Desktop\\Project4-Client\\Project4-Client\\obj\\",
+      "outputPath": "C:\\Users\\karlx\\OneDrive\\Desktop\\tests during math class lol\\Project-4-Sec3-Group4-Client\\Project4-Client\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\karlx\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -140,8 +140,8 @@
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
           "projectReferences": {
-            "C:\\Users\\karlx\\OneDrive\\Desktop\\Project4-Client\\ClassLib1\\ClassLib1.csproj": {
-              "projectPath": "C:\\Users\\karlx\\OneDrive\\Desktop\\Project4-Client\\ClassLib1\\ClassLib1.csproj"
+            "C:\\Users\\karlx\\OneDrive\\Desktop\\tests during math class lol\\Project-4-Sec3-Group4-Client\\ClassLib1\\ClassLib1.csproj": {
+              "projectPath": "C:\\Users\\karlx\\OneDrive\\Desktop\\tests during math class lol\\Project-4-Sec3-Group4-Client\\ClassLib1\\ClassLib1.csproj"
             }
           }
         }
