@@ -14,22 +14,49 @@
         </StackPanel>
 
         <!-- Register Form -->
-        <StackPanel Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Center" Width="300">
-            <TextBlock Text="Join the Commit 💘" FontSize="26" FontWeight="Bold" Foreground="#FF4081" Margin="0,10,0,20" TextAlignment="Center"/>
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+            <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center" Width="300" Margin="0,0,0,20">
+                <TextBlock Text="Join the Commit 💘" FontSize="26" FontWeight="Bold" Foreground="#FF4081" Margin="0,10,0,20" TextAlignment="Center"/>
 
-            <TextBlock Text="Username" Margin="0,5,0,0"/>
-            <TextBox Margin="0,0,0,10" Padding="10"/>
+                <TextBlock Text="Username" Margin="0,5,0,0"/>
+                <TextBox x:Name="UsernameTextBox" Margin="0,0,0,10" Padding="10"/>
 
-            <TextBlock Text="Password" Margin="0,5,0,0"/>
-            <PasswordBox Margin="0,0,0,10" Padding="10"/>
+                <TextBlock Text="Email" Margin="0,5,0,0"/>
+                <TextBox x:Name="EmailTextBox" Margin="0,0,0,10" Padding="10"/>
 
-            <TextBlock Text="Confirm Password" Margin="0,5,0,0"/>
-            <PasswordBox Margin="0,0,0,10" Padding="10"/>
+                <TextBlock Text="Password" Margin="0,5,0,0"/>
+                <PasswordBox x:Name="PasswordBox" Margin="0,0,0,10" Padding="10"/>
 
-            <Button Content="Register" Background="#FF4081" Foreground="White" Margin="0,20,0,10" Padding="10" Click="Register_Click"/>
+                <TextBlock Text="Confirm Password" Margin="0,5,0,0"/>
+                <PasswordBox x:Name="ConfirmPasswordBox" Margin="0,0,0,10" Padding="10"/>
 
-            <TextBlock Text="Already have an account?" HorizontalAlignment="Center"/>
-            <Button Content="Login" Background="Transparent" Foreground="#FF4081" Click="GoToLogin_Click"/>
-        </StackPanel>
+                <TextBlock Text="Bio (Optional)" Margin="0,5,0,0"/>
+                <TextBox x:Name="BioTextBox" Margin="0,0,0,10" Padding="10" Height="60" TextWrapping="Wrap" AcceptsReturn="True"/>
+
+                <TextBlock Text="Gender" Margin="0,5,0,0"/>
+                <ComboBox x:Name="GenderComboBox" Margin="0,0,0,10" Padding="10">
+                    <ComboBoxItem Content="Male"/>
+                    <ComboBoxItem Content="Female"/>
+                    <ComboBoxItem Content="Other"/>
+                </ComboBox>
+
+                <TextBlock Text="State" Margin="0,5,0,0"/>
+                <ComboBox x:Name="StateComboBox" Margin="0,0,0,10" Padding="10">
+                    <ComboBoxItem Content="Single"/>
+                    <ComboBoxItem Content="In a Relationship"/>
+                    <ComboBoxItem Content="Married"/>
+                    <ComboBoxItem Content="Divorced"/>
+                    <ComboBoxItem Content="Widowed"/>
+                </ComboBox>
+
+                <TextBlock Text="Age" Margin="0,5,0,0"/>
+                <TextBox x:Name="AgeTextBox" Margin="0,0,0,10" Padding="10"/>
+
+                <Button Content="Register" Background="#FF4081" Foreground="White" Margin="0,20,0,10" Padding="10" Click="Register_Click"/>
+
+                <TextBlock Text="Already have an account?" HorizontalAlignment="Center"/>
+                <Button Content="Login" Background="Transparent" Foreground="#FF4081" Click="GoToLogin_Click"/>
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </Page>

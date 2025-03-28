@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\karlx\\OneDrive\\Desktop\\tests during math class lol\\Project-4-Sec3-Group4-Client\\ClassLib1\\ClassLib1.csproj": {}
+    "C:\\Users\\karlx\\OneDrive\\Desktop\\cursor fed proj4\\Project-4-Sec3-Group4-Client\\ClassLib1\\ClassLib1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\karlx\\OneDrive\\Desktop\\tests during math class lol\\Project-4-Sec3-Group4-Client\\ClassLib1\\ClassLib1.csproj": {
+    "C:\\Users\\karlx\\OneDrive\\Desktop\\cursor fed proj4\\Project-4-Sec3-Group4-Client\\ClassLib1\\ClassLib1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\karlx\\OneDrive\\Desktop\\tests during math class lol\\Project-4-Sec3-Group4-Client\\ClassLib1\\ClassLib1.csproj",
+        "projectUniqueName": "C:\\Users\\karlx\\OneDrive\\Desktop\\cursor fed proj4\\Project-4-Sec3-Group4-Client\\ClassLib1\\ClassLib1.csproj",
         "projectName": "ClassLib1",
-        "projectPath": "C:\\Users\\karlx\\OneDrive\\Desktop\\tests during math class lol\\Project-4-Sec3-Group4-Client\\ClassLib1\\ClassLib1.csproj",
+        "projectPath": "C:\\Users\\karlx\\OneDrive\\Desktop\\cursor fed proj4\\Project-4-Sec3-Group4-Client\\ClassLib1\\ClassLib1.csproj",
         "packagesPath": "C:\\Users\\karlx\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\karlx\\OneDrive\\Desktop\\tests during math class lol\\Project-4-Sec3-Group4-Client\\ClassLib1\\obj\\",
+        "outputPath": "C:\\Users\\karlx\\OneDrive\\Desktop\\cursor fed proj4\\Project-4-Sec3-Group4-Client\\ClassLib1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\karlx\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -12,7 +12,7 @@ using System.Windows.Shapes;
 // added dependencies and reference to the class
 using RestSharp;
 using Newtonsoft.Json;
-using ClassLib1;
+
 using Project4_Client.Pages;
 
 namespace Project4_Client

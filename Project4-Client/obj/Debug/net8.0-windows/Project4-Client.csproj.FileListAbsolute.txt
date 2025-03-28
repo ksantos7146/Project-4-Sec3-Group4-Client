@@ -57,3 +57,33 @@ C:\Users\karlx\OneDrive\Desktop\tests during math class lol\Project-4-Sec3-Group
 C:\Users\karlx\OneDrive\Desktop\tests during math class lol\Project-4-Sec3-Group4-Client\Project4-Client\obj\Debug\net8.0-windows\Pages\RegisterPage.g.cs
 C:\Users\karlx\OneDrive\Desktop\tests during math class lol\Project-4-Sec3-Group4-Client\Project4-Client\obj\Debug\net8.0-windows\Pages\HomePage.baml
 C:\Users\karlx\OneDrive\Desktop\tests during math class lol\Project-4-Sec3-Group4-Client\Project4-Client\obj\Debug\net8.0-windows\Pages\HomePage.g.cs
+C:\Users\karlx\OneDrive\Desktop\cursor fed proj4\Project-4-Sec3-Group4-Client\Project4-Client\obj\Debug\net8.0-windows\Project4-Client.csproj.AssemblyReference.cache
+C:\Users\karlx\OneDrive\Desktop\cursor fed proj4\Project-4-Sec3-Group4-Client\Project4-Client\obj\Debug\net8.0-windows\MainWindow.baml
+C:\Users\karlx\OneDrive\Desktop\cursor fed proj4\Project-4-Sec3-Group4-Client\Project4-Client\obj\Debug\net8.0-windows\Pages\HomePage.baml
+C:\Users\karlx\OneDrive\Desktop\cursor fed proj4\Project-4-Sec3-Group4-Client\Project4-Client\obj\Debug\net8.0-windows\Pages\LoginPage.baml
+C:\Users\karlx\OneDrive\Desktop\cursor fed proj4\Project-4-Sec3-Group4-Client\Project4-Client\obj\Debug\net8.0-windows\Pages\RegisterPage.baml
+C:\Users\karlx\OneDrive\Desktop\cursor fed proj4\Project-4-Sec3-Group4-Client\Project4-Client\obj\Debug\net8.0-windows\MainWindow.g.cs
+C:\Users\karlx\OneDrive\Desktop\cursor fed proj4\Project-4-Sec3-Group4-Client\Project4-Client\obj\Debug\net8.0-windows\Pages\HomePage.g.cs
+C:\Users\karlx\OneDrive\Desktop\cursor fed proj4\Project-4-Sec3-Group4-Client\Project4-Client\obj\Debug\net8.0-windows\Pages\LoginPage.g.cs
+C:\Users\karlx\OneDrive\Desktop\cursor fed proj4\Project-4-Sec3-Group4-Client\Project4-Client\obj\Debug\net8.0-windows\Pages\RegisterPage.g.cs
+C:\Users\karlx\OneDrive\Desktop\cursor fed proj4\Project-4-Sec3-Group4-Client\Project4-Client\obj\Debug\net8.0-windows\App.g.cs
+C:\Users\karlx\OneDrive\Desktop\cursor fed proj4\Project-4-Sec3-Group4-Client\Project4-Client\obj\Debug\net8.0-windows\Project4-Client_MarkupCompile.cache
+C:\Users\karlx\OneDrive\Desktop\cursor fed proj4\Project-4-Sec3-Group4-Client\Project4-Client\obj\Debug\net8.0-windows\Project4-Client.g.resources
+C:\Users\karlx\OneDrive\Desktop\cursor fed proj4\Project-4-Sec3-Group4-Client\Project4-Client\obj\Debug\net8.0-windows\Project4-Client.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\karlx\OneDrive\Desktop\cursor fed proj4\Project-4-Sec3-Group4-Client\Project4-Client\obj\Debug\net8.0-windows\Project4-Client.AssemblyInfoInputs.cache
+C:\Users\karlx\OneDrive\Desktop\cursor fed proj4\Project-4-Sec3-Group4-Client\Project4-Client\obj\Debug\net8.0-windows\Project4-Client.AssemblyInfo.cs
+C:\Users\karlx\OneDrive\Desktop\cursor fed proj4\Project-4-Sec3-Group4-Client\Project4-Client\obj\Debug\net8.0-windows\Project4-Client.csproj.CoreCompileInputs.cache
+C:\Users\karlx\OneDrive\Desktop\cursor fed proj4\Project-4-Sec3-Group4-Client\Project4-Client\obj\Debug\net8.0-windows\Project4-Client.sourcelink.json
+C:\Users\karlx\OneDrive\Desktop\cursor fed proj4\Project-4-Sec3-Group4-Client\Project4-Client\obj\Debug\net8.0-windows\Project4-Client.dll
+C:\Users\karlx\OneDrive\Desktop\cursor fed proj4\Project-4-Sec3-Group4-Client\Project4-Client\obj\Debug\net8.0-windows\refint\Project4-Client.dll
+C:\Users\karlx\OneDrive\Desktop\cursor fed proj4\Project-4-Sec3-Group4-Client\Project4-Client\obj\Debug\net8.0-windows\Project4-Client.pdb
+C:\Users\karlx\OneDrive\Desktop\cursor fed proj4\Project-4-Sec3-Group4-Client\Project4-Client\bin\Debug\net8.0-windows\Project4-Client.exe
+C:\Users\karlx\OneDrive\Desktop\cursor fed proj4\Project-4-Sec3-Group4-Client\Project4-Client\bin\Debug\net8.0-windows\Project4-Client.deps.json
+C:\Users\karlx\OneDrive\Desktop\cursor fed proj4\Project-4-Sec3-Group4-Client\Project4-Client\bin\Debug\net8.0-windows\Project4-Client.runtimeconfig.json
+C:\Users\karlx\OneDrive\Desktop\cursor fed proj4\Project-4-Sec3-Group4-Client\Project4-Client\bin\Debug\net8.0-windows\Project4-Client.dll
+C:\Users\karlx\OneDrive\Desktop\cursor fed proj4\Project-4-Sec3-Group4-Client\Project4-Client\bin\Debug\net8.0-windows\Project4-Client.pdb
+C:\Users\karlx\OneDrive\Desktop\cursor fed proj4\Project-4-Sec3-Group4-Client\Project4-Client\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
+C:\Users\karlx\OneDrive\Desktop\cursor fed proj4\Project-4-Sec3-Group4-Client\Project4-Client\bin\Debug\net8.0-windows\RestSharp.dll
+C:\Users\karlx\OneDrive\Desktop\cursor fed proj4\Project-4-Sec3-Group4-Client\Project4-Client\obj\Debug\net8.0-windows\Project4-Client.csproj.CopyComplete
+C:\Users\karlx\OneDrive\Desktop\cursor fed proj4\Project-4-Sec3-Group4-Client\Project4-Client\obj\Debug\net8.0-windows\Project4-Client.genruntimeconfig.cache
+C:\Users\karlx\OneDrive\Desktop\cursor fed proj4\Project-4-Sec3-Group4-Client\Project4-Client\obj\Debug\net8.0-windows\ref\Project4-Client.dll

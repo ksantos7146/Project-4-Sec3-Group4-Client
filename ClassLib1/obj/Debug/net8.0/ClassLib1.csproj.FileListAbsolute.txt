@@ -24,3 +24,16 @@ C:\Users\karlx\OneDrive\Desktop\tests during math class lol\Project-4-Sec3-Group
 C:\Users\karlx\OneDrive\Desktop\tests during math class lol\Project-4-Sec3-Group4-Client\ClassLib1\obj\Debug\net8.0\refint\ClassLib1.dll
 C:\Users\karlx\OneDrive\Desktop\tests during math class lol\Project-4-Sec3-Group4-Client\ClassLib1\obj\Debug\net8.0\ClassLib1.pdb
 C:\Users\karlx\OneDrive\Desktop\tests during math class lol\Project-4-Sec3-Group4-Client\ClassLib1\obj\Debug\net8.0\ref\ClassLib1.dll
+C:\Users\karlx\OneDrive\Desktop\cursor fed proj4\Project-4-Sec3-Group4-Client\ClassLib1\bin\Debug\net8.0\ClassLib1.deps.json
+C:\Users\karlx\OneDrive\Desktop\cursor fed proj4\Project-4-Sec3-Group4-Client\ClassLib1\bin\Debug\net8.0\ClassLib1.dll
+C:\Users\karlx\OneDrive\Desktop\cursor fed proj4\Project-4-Sec3-Group4-Client\ClassLib1\bin\Debug\net8.0\ClassLib1.pdb
+C:\Users\karlx\OneDrive\Desktop\cursor fed proj4\Project-4-Sec3-Group4-Client\ClassLib1\obj\Debug\net8.0\ClassLib1.csproj.AssemblyReference.cache
+C:\Users\karlx\OneDrive\Desktop\cursor fed proj4\Project-4-Sec3-Group4-Client\ClassLib1\obj\Debug\net8.0\ClassLib1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\karlx\OneDrive\Desktop\cursor fed proj4\Project-4-Sec3-Group4-Client\ClassLib1\obj\Debug\net8.0\ClassLib1.AssemblyInfoInputs.cache
+C:\Users\karlx\OneDrive\Desktop\cursor fed proj4\Project-4-Sec3-Group4-Client\ClassLib1\obj\Debug\net8.0\ClassLib1.AssemblyInfo.cs
+C:\Users\karlx\OneDrive\Desktop\cursor fed proj4\Project-4-Sec3-Group4-Client\ClassLib1\obj\Debug\net8.0\ClassLib1.csproj.CoreCompileInputs.cache
+C:\Users\karlx\OneDrive\Desktop\cursor fed proj4\Project-4-Sec3-Group4-Client\ClassLib1\obj\Debug\net8.0\ClassLib1.sourcelink.json
+C:\Users\karlx\OneDrive\Desktop\cursor fed proj4\Project-4-Sec3-Group4-Client\ClassLib1\obj\Debug\net8.0\ClassLib1.dll
+C:\Users\karlx\OneDrive\Desktop\cursor fed proj4\Project-4-Sec3-Group4-Client\ClassLib1\obj\Debug\net8.0\refint\ClassLib1.dll
+C:\Users\karlx\OneDrive\Desktop\cursor fed proj4\Project-4-Sec3-Group4-Client\ClassLib1\obj\Debug\net8.0\ClassLib1.pdb
+C:\Users\karlx\OneDrive\Desktop\cursor fed proj4\Project-4-Sec3-Group4-Client\ClassLib1\obj\Debug\net8.0\ref\ClassLib1.dll

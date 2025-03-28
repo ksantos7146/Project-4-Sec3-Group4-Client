@@ -27,20 +27,6 @@
             "related": ".xml"
           }
         }
-      },
-      "ClassLib1/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
-        "dependencies": {
-          "Newtonsoft.Json": "13.0.3",
-          "RestSharp": "112.1.0"
-        },
-        "compile": {
-          "bin/placeholder/ClassLib1.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/ClassLib1.dll": {}
-        }
       }
     }
   },
@@ -99,16 +85,10 @@
         "restsharp.nuspec",
         "restsharp.png"
       ]
-    },
-    "ClassLib1/1.0.0": {
-      "type": "project",
-      "path": "../ClassLib1/ClassLib1.csproj",
-      "msbuildProject": "../ClassLib1/ClassLib1.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0-windows7.0": [
-      "ClassLib1 >= 1.0.0",
       "Newtonsoft.Json >= 13.0.3",
       "RestSharp >= 112.1.0"
     ]
@@ -119,11 +99,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\karlx\\OneDrive\\Desktop\\tests during math class lol\\Project-4-Sec3-Group4-Client\\Project4-Client\\Project4-Client.csproj",
+      "projectUniqueName": "C:\\Users\\karlx\\OneDrive\\Desktop\\cursor fed proj4\\Project-4-Sec3-Group4-Client\\Project4-Client\\Project4-Client.csproj",
       "projectName": "Project4-Client",
-      "projectPath": "C:\\Users\\karlx\\OneDrive\\Desktop\\tests during math class lol\\Project-4-Sec3-Group4-Client\\Project4-Client\\Project4-Client.csproj",
+      "projectPath": "C:\\Users\\karlx\\OneDrive\\Desktop\\cursor fed proj4\\Project-4-Sec3-Group4-Client\\Project4-Client\\Project4-Client.csproj",
       "packagesPath": "C:\\Users\\karlx\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\karlx\\OneDrive\\Desktop\\tests during math class lol\\Project-4-Sec3-Group4-Client\\Project4-Client\\obj\\",
+      "outputPath": "C:\\Users\\karlx\\OneDrive\\Desktop\\cursor fed proj4\\Project-4-Sec3-Group4-Client\\Project4-Client\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\karlx\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -139,11 +119,7 @@
       "frameworks": {
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
-          "projectReferences": {
-            "C:\\Users\\karlx\\OneDrive\\Desktop\\tests during math class lol\\Project-4-Sec3-Group4-Client\\ClassLib1\\ClassLib1.csproj": {
-              "projectPath": "C:\\Users\\karlx\\OneDrive\\Desktop\\tests during math class lol\\Project-4-Sec3-Group4-Client\\ClassLib1\\ClassLib1.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {

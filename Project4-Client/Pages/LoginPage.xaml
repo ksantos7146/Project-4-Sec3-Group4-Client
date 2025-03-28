@@ -10,7 +10,7 @@
 
         <!-- Logo -->
         <StackPanel Grid.Row="0" HorizontalAlignment="Center" Margin="0,30,0,10">
-            <Image Source="C:\Users\karlx\OneDrive\Desktop\tests during math class lol\Project-4-Sec3-Group4-Client\Project4-Client\Resources\logo.png" Width="300" Height="300"/>
+            <Image Source="C:\Users\karlx\OneDrive\Desktop\tests during math class lol\Project-4-Sec3-Group4-Client\Project4-Client\Resources\logo.png" Width="400" Height="400"/>
         </StackPanel>
 
         <!-- Login Form -->
