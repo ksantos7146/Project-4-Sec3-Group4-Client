@@ -87,3 +87,6 @@ C:\Users\karlx\OneDrive\Desktop\cursor fed proj4\Project-4-Sec3-Group4-Client\Pr
 C:\Users\karlx\OneDrive\Desktop\cursor fed proj4\Project-4-Sec3-Group4-Client\Project4-Client\obj\Debug\net8.0-windows\Project4-Client.csproj.CopyComplete
 C:\Users\karlx\OneDrive\Desktop\cursor fed proj4\Project-4-Sec3-Group4-Client\Project4-Client\obj\Debug\net8.0-windows\Project4-Client.genruntimeconfig.cache
 C:\Users\karlx\OneDrive\Desktop\cursor fed proj4\Project-4-Sec3-Group4-Client\Project4-Client\obj\Debug\net8.0-windows\ref\Project4-Client.dll
+C:\Users\karlx\OneDrive\Desktop\cursor fed proj4\Project-4-Sec3-Group4-Client\Project4-Client\obj\Debug\net8.0-windows\Pages\AccountInfo.g.cs
+C:\Users\karlx\OneDrive\Desktop\cursor fed proj4\Project-4-Sec3-Group4-Client\Project4-Client\obj\Debug\net8.0-windows\Project4-Client_MarkupCompile.lref
+C:\Users\karlx\OneDrive\Desktop\cursor fed proj4\Project-4-Sec3-Group4-Client\Project4-Client\obj\Debug\net8.0-windows\Pages\AccountInfo.baml

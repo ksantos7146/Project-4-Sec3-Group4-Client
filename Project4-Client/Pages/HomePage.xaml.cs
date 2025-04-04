@@ -20,9 +20,31 @@ namespace Project4_Client.Pages
     /// </summary>
     public partial class HomePage : Page
     {
+        private MainWindow _mainWindow;
+
         public HomePage()
         {
             InitializeComponent();
+            // Try to get the MainWindow reference from the current application
+            _mainWindow = Application.Current.MainWindow as MainWindow;
+        }
+
+        public HomePage(MainWindow mainWindow)
+        {
+            InitializeComponent();
+            _mainWindow = mainWindow;
+        }
+
+        private void AccountButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (_mainWindow != null)
+            {
+                _mainWindow.MainFrame.Navigate(new AccountInfo(_mainWindow));
+            }
+            else
+            {
+                MessageBox.Show("Navigation error: Cannot access main window.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
     }
 }

@@ -1,0 +1,77 @@
+﻿<Page x:Class="Project4_Client.Pages.AccountInfo"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:local="clr-namespace:Project4_Client.Pages"
+      mc:Ignorable="d"
+      Background="#FFF5F7"
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AccountInfo">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Logo -->
+        <StackPanel Grid.Row="0" HorizontalAlignment="Center" Margin="0,30,0,10">
+            <Image Source="/Resources/logo.png" Width="150" Height="150"/>
+        </StackPanel>
+
+        <!-- Account Info Form -->
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+            <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center" Width="300" Margin="0,0,0,20">
+                <TextBlock Text="Edit Your Profile" FontSize="26" FontWeight="Bold" Foreground="#FF4081" Margin="0,10,0,20" TextAlignment="Center"/>
+
+                <!-- Profile Image Section -->
+                <Border Width="150" Height="150" BorderBrush="Gray" BorderThickness="1" Margin="0,0,0,20">
+                    <Grid>
+                        <Image x:Name="ProfileImage" Stretch="UniformToFill" Source="/Assets/default-profile.png"/>
+                        <Button x:Name="UploadImageButton" Content="Upload" 
+                                Click="UploadImageButton_Click" 
+                                HorizontalAlignment="Center" 
+                                VerticalAlignment="Bottom" 
+                                Margin="0,0,0,10"/>
+                    </Grid>
+                </Border>
+
+                <TextBlock Text="Email" Margin="0,5,0,0"/>
+                <TextBox x:Name="EmailTextBox" Margin="0,0,0,10" Padding="10"/>
+
+                <TextBlock Text="Bio" Margin="0,5,0,0"/>
+                <TextBox x:Name="BioTextBox" Margin="0,0,0,10" Padding="10" Height="60" TextWrapping="Wrap" AcceptsReturn="True"/>
+
+                <TextBlock Text="Gender" Margin="0,5,0,0"/>
+                <ComboBox x:Name="GenderComboBox" Margin="0,0,0,10" Padding="10">
+                    <ComboBoxItem Content="Male"/>
+                    <ComboBoxItem Content="Female"/>
+                    <ComboBoxItem Content="Other"/>
+                </ComboBox>
+
+                <TextBlock Text="State" Margin="0,5,0,0"/>
+                <ComboBox x:Name="StateComboBox" Margin="0,0,0,10" Padding="10">
+                    <ComboBoxItem Content="Single"/>
+                    <ComboBoxItem Content="In a Relationship"/>
+                    <ComboBoxItem Content="Married"/>
+                    <ComboBoxItem Content="Divorced"/>
+                    <ComboBoxItem Content="Widowed"/>
+                </ComboBox>
+
+                <TextBlock Text="Age" Margin="0,5,0,0"/>
+                <TextBox x:Name="AgeTextBox" Margin="0,0,0,10" Padding="10"/>
+
+                <TextBlock Text="New Password (leave empty to keep current)" Margin="0,5,0,0"/>
+                <PasswordBox x:Name="PasswordBox" Margin="0,0,0,10" Padding="10"/>
+
+                <TextBlock Text="Confirm New Password" Margin="0,5,0,0"/>
+                <PasswordBox x:Name="ConfirmPasswordBox" Margin="0,0,0,10" Padding="10"/>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20,0,10">
+                    <Button Content="Save" Background="#FF4081" Foreground="White" Margin="0,0,10,0" Padding="10" Click="SaveButton_Click"/>
+                    <Button Content="Cancel" Background="Transparent" Foreground="#FF4081" Padding="10" Click="CancelButton_Click"/>
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>

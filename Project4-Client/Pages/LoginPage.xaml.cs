@@ -1,4 +1,4 @@
-﻿using System;
+﻿﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -46,7 +46,7 @@ namespace Project4_Client.Pages
         {
             try
             {
-                var client = new RestClient("http://10.144.116.108:5214/");
+                var client = new RestClient("http://10.144.116.121:5214/");
                 var request = new RestRequest("api/Auth/login", Method.Post);
                 
                 // Add the login request body
@@ -70,7 +70,7 @@ namespace Project4_Client.Pages
                         App.Current.Properties["Username"] = authResponse.Username;
 
                         // Navigate to home page
-                        _mainWindow.MainFrame.Navigate(new HomePage());
+                        _mainWindow.MainFrame.Navigate(new HomePage(_mainWindow));
                     }
                     else
                     {

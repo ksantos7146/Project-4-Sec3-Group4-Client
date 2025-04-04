@@ -1,4 +1,4 @@
-﻿using System;
+﻿﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -131,7 +131,7 @@ namespace Project4_Client.Pages
         {
             try
             {
-                var client = new RestClient("http://10.144.116.108:5214/");
+                var client = new RestClient("http://10.144.116.121:5214/");
                 var restRequest = new RestRequest("api/Auth/register", Method.Post);
                 restRequest.AddJsonBody(request);
 
@@ -148,7 +148,7 @@ namespace Project4_Client.Pages
                         App.Current.Properties["Username"] = authResponse.Username;
 
                         MessageBox.Show("Registration successful!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
-                        _mainWindow.MainFrame.Navigate(new HomePage());
+                        _mainWindow.MainFrame.Navigate(new HomePage(_mainWindow));
                     }
                     else
                     {
