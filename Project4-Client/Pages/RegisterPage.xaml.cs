@@ -15,7 +15,7 @@ using System.Windows.Shapes;
 using RestSharp;
 using Newtonsoft.Json;
 using Project4_Client.Models;
-
+using Project4_Client.Config;
 namespace Project4_Client.Pages
 {
     /// <summary>
@@ -131,7 +131,7 @@ namespace Project4_Client.Pages
         {
             try
             {
-                var client = new RestClient("http://10.144.116.121:5214/");
+                var client = new RestClient(AppConfig.ServerBaseUrl);
                 var restRequest = new RestRequest("api/Auth/register", Method.Post);
                 restRequest.AddJsonBody(request);
 

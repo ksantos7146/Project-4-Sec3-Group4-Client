@@ -19,7 +19,7 @@ using Microsoft.Win32;
 using System.IO;
 using System.Drawing;
 using System.Drawing.Imaging;
-//test
+using Project4_Client.Config;
 namespace Project4_Client.Pages
 {
     /// <summary>
@@ -45,7 +45,7 @@ namespace Project4_Client.Pages
         {
             try
             {
-                var client = new RestClient("http://10.144.116.121:5214/");
+                var client = new RestClient(AppConfig.ServerBaseUrl);
                 var request = new RestRequest("api/users/logged", Method.Get);
                 request.AddHeader("Authorization", $"Bearer {_authToken}");
 
@@ -140,7 +140,7 @@ namespace Project4_Client.Pages
                     _currentImageData = base64Image;
 
                     // Upload the image to the server
-                    var client = new RestClient("http://10.144.116.121:5214/");
+                    var client = new RestClient(AppConfig.ServerBaseUrl);
                     var request = new RestRequest($"api/users/{_userId}/images", Method.Post);
                     request.AddHeader("Authorization", $"Bearer {_authToken}");
 
@@ -177,7 +177,7 @@ namespace Project4_Client.Pages
             {
                 try
                 {
-                    var client = new RestClient("http://10.144.116.121:5214/");
+                    var client = new RestClient(AppConfig.ServerBaseUrl);
                     var request = new RestRequest($"api/users/{_userId}", Method.Put);
                     request.AddHeader("Authorization", $"Bearer {_authToken}");
 
@@ -226,7 +226,8 @@ namespace Project4_Client.Pages
             // Check if either password field has content
             bool hasPassword = PasswordBox.SecurePassword.Length > 0;
             bool hasConfirmPassword = ConfirmPasswordBox.SecurePassword.Length > 0;
-
+            Console.WriteLine(PasswordBox.SecurePassword);
+            Console.WriteLine(ConfirmPasswordBox.SecurePassword);
             // Only validate passwords if they are provided
             if (hasPassword || hasConfirmPassword)
             {

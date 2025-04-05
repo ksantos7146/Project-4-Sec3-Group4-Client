@@ -16,7 +16,7 @@ using RestSharp;
 using Newtonsoft.Json;
 using Project4_Client.Models;
 using System.IO;
-
+using Project4_Client.Config;
 namespace Project4_Client.Pages
 {
     /// <summary>
@@ -56,7 +56,7 @@ namespace Project4_Client.Pages
         {
             try
             {
-                var client = new RestClient("http://10.144.116.121:5214/");
+                var client = new RestClient(AppConfig.ServerBaseUrl);
                 var request = new RestRequest("api/users", Method.Get);
                 request.AddHeader("Authorization", $"Bearer {_authToken}");
 
@@ -135,7 +135,7 @@ namespace Project4_Client.Pages
             var currentUser = _allUsers[_currentUserIndex];
             try
             {
-                var client = new RestClient("http://10.144.116.121:5214/");
+                var client = new RestClient(AppConfig.ServerBaseUrl);
                 var request = new RestRequest("api/likes", Method.Post);
                 request.AddHeader("Authorization", $"Bearer {_authToken}");
 
