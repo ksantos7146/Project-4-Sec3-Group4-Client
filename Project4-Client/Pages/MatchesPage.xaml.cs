@@ -17,6 +17,7 @@ namespace Project4_Client.Pages
         private List<User> matches;
         private string _authToken;
         private string _currentUserId;
+        private readonly JsonSerializerSettings _jsonSettings;
 
         public MatchesPage()
         {
@@ -25,6 +26,15 @@ namespace Project4_Client.Pages
                 InitializeComponent();
                 _authToken = App.Current.Properties["AuthToken"]?.ToString() ?? string.Empty;
                 _currentUserId = App.Current.Properties["UserId"]?.ToString() ?? string.Empty;
+
+                // Initialize JSON settings with case-insensitive property names
+                _jsonSettings = new JsonSerializerSettings
+                {
+                    ContractResolver = new Newtonsoft.Json.Serialization.DefaultContractResolver
+                    {
+                        NamingStrategy = new Newtonsoft.Json.Serialization.CamelCaseNamingStrategy()
+                    }
+                };
 
                 if (string.IsNullOrEmpty(_authToken) || string.IsNullOrEmpty(_currentUserId))
                 {
@@ -43,13 +53,11 @@ namespace Project4_Client.Pages
                 }
 
                 matches = new List<User>();
-                MatchesListView.ItemsSource = matches;
                 LoadMatches();
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error initializing matches: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                NavigationService?.GoBack();
+                MessageBox.Show($"Error initializing page: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
@@ -65,32 +73,51 @@ namespace Project4_Client.Pages
 
                 if (response.StatusCode == System.Net.HttpStatusCode.OK)
                 {
-                    var matchDtos = JsonConvert.DeserializeObject<List<MatchDto>>(response.Content);
-                    if (matchDtos != null)
-                    {
-                        matches.Clear();
+                    var matchesResponse = JsonConvert.DeserializeObject<List<MatchDto>>(response.Content, _jsonSettings);
+                    matches.Clear();
 
-                        // Get user details for each match
-                        foreach (var match in matchDtos)
+                    if (matchesResponse != null)
+                    {
+                        foreach (var match in matchesResponse)
                         {
-                            string matchedUserId = match.User1Id == _currentUserId ? match.User2Id : match.User1Id;
-                            
-                            var userRequest = new RestRequest($"api/users/{matchedUserId}", Method.Get);
-                            userRequest.AddHeader("Authorization", $"Bearer {_authToken}");
-                            
-                            var userResponse = await client.ExecuteAsync(userRequest);
-                            
-                            if (userResponse.StatusCode == System.Net.HttpStatusCode.OK)
+                            var matchedUser = match.User1Id == _currentUserId ? match.User2 : match.User1;
+                            if (matchedUser != null)
                             {
-                                var user = JsonConvert.DeserializeObject<User>(userResponse.Content);
-                                if (user != null)
+                                // Convert the first image to a BitmapImage
+                                if (matchedUser.Images != null && matchedUser.Images.Count > 0)
                                 {
-                                    matches.Add(user);
+                                    try
+                                    {
+                                        Console.WriteLine($"Loading image for user {matchedUser.Username}");
+                                        Console.WriteLine($"Image data length: {matchedUser.Images[0].ImageData?.Length ?? 0}");
+                                        var imageBytes = Convert.FromBase64String(matchedUser.Images[0].ImageData);
+                                        Console.WriteLine($"Converted to {imageBytes.Length} bytes");
+                                        using (var ms = new MemoryStream(imageBytes))
+                                        {
+                                            var bitmap = new BitmapImage();
+                                            bitmap.BeginInit();
+                                            bitmap.CacheOption = BitmapCacheOption.OnLoad;
+                                            bitmap.StreamSource = ms;
+                                            bitmap.EndInit();
+                                            matchedUser.ProfileImage = bitmap;
+                                            Console.WriteLine($"Successfully created BitmapImage for {matchedUser.Username}");
+                                        }
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        Console.WriteLine($"Error loading image for {matchedUser.Username}: {ex.Message}");
+                                        Console.WriteLine($"Stack trace: {ex.StackTrace}");
+                                        matchedUser.ProfileImage = new BitmapImage(new Uri("pack://application:,,,/Project4-Client;component/Resources/default-image.png", UriKind.Absolute));
+                                    }
                                 }
+                                else
+                                {
+                                    matchedUser.ProfileImage = new BitmapImage(new Uri("pack://application:,,,/Project4-Client;component/Resources/default-image.png", UriKind.Absolute));
+                                }
+                                matches.Add(matchedUser);
                             }
                         }
 
-                        MatchesListView.ItemsSource = null;
                         MatchesListView.ItemsSource = matches;
 
                         if (matches.Count == 0)
@@ -126,15 +153,20 @@ namespace Project4_Client.Pages
 
         private void UpdateMatchDetails(User user)
         {
-            MatchNameText.Text = user.username;
-            MatchAgeText.Text = $"Age: {user.age}";
-            MatchBioText.Text = user.bio;
+            MatchNameText.Text = user.Username;
+            MatchEmailText.Text = user.Email;
+            MatchAgeText.Text = $"Age: {user.Age}";
+            MatchBioText.Text = user.Bio;
 
-            if (user.images != null && user.images.Length > 0)
+            if (user.ProfileImage != null)
+            {
+                MatchProfileImage.Source = user.ProfileImage;
+            }
+            else if (user.Images != null && user.Images.Count > 0)
             {
                 try
                 {
-                    var imageBytes = Convert.FromBase64String(user.images[0].imageData);
+                    var imageBytes = Convert.FromBase64String(user.Images[0].ImageData);
                     using (var ms = new MemoryStream(imageBytes))
                     {
                         var bitmap = new BitmapImage();
@@ -148,7 +180,12 @@ namespace Project4_Client.Pages
                 catch (Exception ex)
                 {
                     MessageBox.Show($"Error loading image: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MatchProfileImage.Source = new BitmapImage(new Uri("pack://application:,,,/Project4-Client;component/Resources/default-image.png", UriKind.Absolute));
                 }
+            }
+            else
+            {
+                MatchProfileImage.Source = new BitmapImage(new Uri("pack://application:,,,/Project4-Client;component/Resources/default-image.png", UriKind.Absolute));
             }
         }
 

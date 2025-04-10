@@ -66,7 +66,7 @@ namespace Project4_Client.Pages
                 {
                     _allUsers = JsonConvert.DeserializeObject<List<User>>(response.Content);
                     // Filter out the current user
-                    _allUsers = _allUsers.Where(u => u.userId.ToString() != _currentUserId).ToList();
+                    _allUsers = _allUsers.Where(u => u.UserId.ToString() != _currentUserId).ToList();
                     
                     // Get user preferences to filter by
                     var prefRequest = new RestRequest($"api/preference/user/{_currentUserId}", Method.Get);
@@ -81,12 +81,12 @@ namespace Project4_Client.Pages
                         // Apply age filter
                         if (preferences.MinAge.HasValue)
                         {
-                            _allUsers = _allUsers.Where(u => u.age >= preferences.MinAge.Value).ToList();
+                            _allUsers = _allUsers.Where(u => u.Age >= preferences.MinAge.Value).ToList();
                         }
                         
                         if (preferences.MaxAge.HasValue)
                         {
-                            _allUsers = _allUsers.Where(u => u.age <= preferences.MaxAge.Value).ToList();
+                            _allUsers = _allUsers.Where(u => u.Age <= preferences.MaxAge.Value).ToList();
                         }
                         
                         // Apply gender filter if specified
@@ -128,16 +128,23 @@ namespace Project4_Client.Pages
             var user = _allUsers[_currentUserIndex];
             
             // Update UI elements
-            NameTextBlock.Text = $"Name: {user.username}";
-            AgeTextBlock.Text = $"Age: {user.age}";
-            BioTextBlock.Text = $"Bio: {user.bio}";
+            NameTextBlock.Text = user.Username;
+            if (user.Age >= 18 && user.Age <= 100)
+            {
+                AgeTextBlock.Text = $"Age: {user.Age}";
+            }
+            else
+            {
+                AgeTextBlock.Text = "Age: Not specified";
+            }
+            BioTextBlock.Text = user.Bio;
 
             // Display profile image if available
-            if (user.images != null && user.images.Length > 0 && !string.IsNullOrEmpty(user.images[0].imageData))
+            if (user.Images != null && user.Images.Count > 0 && !string.IsNullOrEmpty(user.Images[0].ImageData))
             {
                 try
                 {
-                    byte[] imageBytes = Convert.FromBase64String(user.images[0].imageData);
+                    byte[] imageBytes = Convert.FromBase64String(user.Images[0].ImageData);
                     using (MemoryStream ms = new MemoryStream(imageBytes))
                     {
                         var image = new BitmapImage();
@@ -177,10 +184,10 @@ namespace Project4_Client.Pages
 
                 var likeDto = new LikeDto
                 {
-                    LikedId = currentUser.userId.ToString(),
+                    LikedId = currentUser.UserId.ToString(),
                     LikerId = _currentUserId,
                     LikedAt = DateTime.UtcNow,
-                    likedBack = false
+                    LikedBack = false
                 };
                 request.AddJsonBody(likeDto);
 
@@ -191,7 +198,7 @@ namespace Project4_Client.Pages
                     var likeResponse = JsonConvert.DeserializeObject<LikeResponseDto>(response.Content);
                     if (likeResponse != null && likeResponse.Like != null)
                     {
-                        if (likeResponse.Like.likedBack)
+                        if (likeResponse.Like.LikedBack)
                         {
                             MessageBox.Show("It's a match! 💖", "Match!", MessageBoxButton.OK, MessageBoxImage.Information);
                         }
@@ -203,7 +210,7 @@ namespace Project4_Client.Pages
                         if (likeResponse.NextUser != null)
                         {
                             // Check if the user is already in the list
-                            if (!_allUsers.Any(u => u.userId == likeResponse.NextUser.userId))
+                            if (!_allUsers.Any(u => u.UserId == likeResponse.NextUser.UserId))
                             {
                                 _allUsers.Add(likeResponse.NextUser);
                             }

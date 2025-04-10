@@ -8,7 +8,7 @@ namespace Project4_Client.Models
         public string? LikerId { get; set; } = string.Empty;
         public string LikedId { get; set; } = string.Empty;
         public DateTime? LikedAt { get; set; }
-        public bool likedBack { get; set; } = false;
+        public bool LikedBack { get; set; } = false;
     }
 
     public class LikeResponseDto
