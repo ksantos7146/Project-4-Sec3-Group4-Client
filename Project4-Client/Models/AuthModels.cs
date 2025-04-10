@@ -15,7 +15,6 @@ namespace Project4_Client.Models
         public string Password { get; set; } = string.Empty;
         public string? Bio { get; set; }
         public int? GenderId { get; set; }
-        public int StateId { get; set; }
         public int Age { get; set; }
     }
 

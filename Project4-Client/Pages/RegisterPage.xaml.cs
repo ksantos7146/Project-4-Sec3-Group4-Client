@@ -41,7 +41,6 @@ namespace Project4_Client.Pages
                     Password = PasswordBox.Password,
                     Bio = BioTextBox.Text,
                     GenderId = GetGenderId(GenderComboBox.SelectedItem as ComboBoxItem),
-                    StateId = GetStateId(StateComboBox.SelectedItem as ComboBoxItem),
                     Age = int.Parse(AgeTextBox.Text)
                 };
 
@@ -81,12 +80,6 @@ namespace Project4_Client.Pages
                 return false;
             }
 
-            if (StateComboBox.SelectedItem == null)
-            {
-                MessageBox.Show("Please select a state", "Validation Error", MessageBoxButton.OK, MessageBoxImage.Warning);
-                return false;
-            }
-
             if (!int.TryParse(AgeTextBox.Text, out int age) || age < 18 || age > 100)
             {
                 MessageBox.Show("Please enter a valid age (18-100)", "Validation Error", MessageBoxButton.OK, MessageBoxImage.Warning);
@@ -104,20 +97,6 @@ namespace Project4_Client.Pages
                 "Male" => 1,
                 "Female" => 2,
                 "Other" => 3,
-                _ => 0
-            };
-        }
-
-        private int GetStateId(ComboBoxItem selectedItem)
-        {
-            if (selectedItem == null) return 0;
-            return selectedItem.Content.ToString() switch
-            {
-                "Single" => 1,
-                "In a Relationship" => 2,
-                "Married" => 3,
-                "Divorced" => 4,
-                "Widowed" => 5,
                 _ => 0
             };
         }

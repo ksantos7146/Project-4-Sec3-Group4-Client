@@ -67,13 +67,46 @@ namespace Project4_Client.Pages
                     _allUsers = JsonConvert.DeserializeObject<List<User>>(response.Content);
                     // Filter out the current user
                     _allUsers = _allUsers.Where(u => u.userId.ToString() != _currentUserId).ToList();
+                    
+                    // Get user preferences to filter by
+                    var prefRequest = new RestRequest($"api/preference/user/{_currentUserId}", Method.Get);
+                    prefRequest.AddHeader("Authorization", $"Bearer {_authToken}");
+                    
+                    var prefResponse = await client.ExecuteAsync(prefRequest);
+                    
+                    if (prefResponse.StatusCode == System.Net.HttpStatusCode.OK)
+                    {
+                        var preferences = JsonConvert.DeserializeObject<PreferenceDto>(prefResponse.Content);
+                        
+                        // Apply age filter
+                        if (preferences.MinAge.HasValue)
+                        {
+                            _allUsers = _allUsers.Where(u => u.age >= preferences.MinAge.Value).ToList();
+                        }
+                        
+                        if (preferences.MaxAge.HasValue)
+                        {
+                            _allUsers = _allUsers.Where(u => u.age <= preferences.MaxAge.Value).ToList();
+                        }
+                        
+                        // Apply gender filter if specified
+                        if (preferences.GenderId.HasValue)
+                        {
+                            _allUsers = _allUsers.Where(u => {
+                                // This assumes the user object has a genderId property
+                                // You may need to adjust this based on your actual user model
+                                return u.GetType().GetProperty("genderId")?.GetValue(u)?.ToString() == preferences.GenderId.Value.ToString();
+                            }).ToList();
+                        }
+                    }
+                    
                     if (_allUsers.Any())
                     {
                         DisplayCurrentUser();
                     }
                     else
                     {
-                        MessageBox.Show("No other users found.", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+                        MessageBox.Show("No users match your preferences.", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
                     }
                 }
                 else
@@ -130,18 +163,24 @@ namespace Project4_Client.Pages
         private async void LikeButton_Click(object sender, RoutedEventArgs e)
         {
             if (_allUsers == null || !_allUsers.Any() || _currentUserIndex < 0 || _currentUserIndex >= _allUsers.Count)
+            {
+                MessageBox.Show("No users available to like.", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
                 return;
+            }
 
             var currentUser = _allUsers[_currentUserIndex];
             try
             {
                 var client = new RestClient(AppConfig.ServerBaseUrl);
-                var request = new RestRequest("api/likes", Method.Post);
+                var request = new RestRequest("api/like", Method.Post);
                 request.AddHeader("Authorization", $"Bearer {_authToken}");
 
                 var likeDto = new LikeDto
                 {
-                    LikedId = currentUser.userId.ToString()
+                    LikedId = currentUser.userId.ToString(),
+                    LikerId = _currentUserId,
+                    LikedAt = DateTime.UtcNow,
+                    likedBack = false
                 };
                 request.AddJsonBody(likeDto);
 
@@ -150,34 +189,76 @@ namespace Project4_Client.Pages
                 if (response.StatusCode == System.Net.HttpStatusCode.OK)
                 {
                     var likeResponse = JsonConvert.DeserializeObject<LikeResponseDto>(response.Content);
-                    
-                    if (likeResponse.Like.likedBack)
+                    if (likeResponse != null && likeResponse.Like != null)
                     {
-                        MessageBox.Show("It's a match! 💖", "Match!", MessageBoxButton.OK, MessageBoxImage.Information);
-                    }
+                        if (likeResponse.Like.likedBack)
+                        {
+                            MessageBox.Show("It's a match! 💖", "Match!", MessageBoxButton.OK, MessageBoxImage.Information);
+                        }
 
-                    // Remove the current user from the list
-                    _allUsers.RemoveAt(_currentUserIndex);
-                    
-                    if (_allUsers.Any())
-                    {
-                        // If there are more users, show the next one
-                        _currentUserIndex = _currentUserIndex % _allUsers.Count;
-                        DisplayCurrentUser();
+                        // Remove the current user from the list
+                        _allUsers.RemoveAt(_currentUserIndex);
+                        
+                        // If the server provided a next user, add it to the list
+                        if (likeResponse.NextUser != null)
+                        {
+                            // Check if the user is already in the list
+                            if (!_allUsers.Any(u => u.userId == likeResponse.NextUser.userId))
+                            {
+                                _allUsers.Add(likeResponse.NextUser);
+                            }
+                        }
+                        
+                        if (_allUsers.Any())
+                        {
+                            // If there are more users, show the next one
+                            _currentUserIndex = _currentUserIndex % _allUsers.Count;
+                            DisplayCurrentUser();
+                        }
+                        else
+                        {
+                            MessageBox.Show("No more users to show.", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("No more users to show.", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+                        MessageBox.Show("Invalid response from server.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                     }
+                }
+                else if (response.StatusCode == System.Net.HttpStatusCode.BadRequest)
+                {
+                    MessageBox.Show("Cannot like this user.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+                else if (response.StatusCode == System.Net.HttpStatusCode.InternalServerError)
+                {
+                    // Try to get more detailed error information
+                    string errorMessage = "Internal Server Error";
+                    try
+                    {
+                        var errorResponse = JsonConvert.DeserializeObject<dynamic>(response.Content);
+                        if (errorResponse != null && errorResponse.message != null)
+                        {
+                            errorMessage = errorResponse.message.ToString();
+                        }
+                    }
+                    catch
+                    {
+                        // If we can't parse the error message, just use the default
+                    }
+                    
+                    MessageBox.Show($"Server error: {errorMessage}\n\nPlease try again later.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    
+                    // Log the error for debugging
+                    Console.WriteLine($"Like error: {response.Content}");
                 }
                 else
                 {
-                    MessageBox.Show("Failed to like user.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show($"Failed to like user. Status: {response.StatusCode}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show($"An error occurred while liking user: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
@@ -229,6 +310,16 @@ namespace Project4_Client.Pages
             {
                 MessageBox.Show("Navigation error: Cannot access main window.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+        }
+
+        private void MatchesButton_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService?.Navigate(new MatchesPage());
+        }
+
+        private void PreferencesButton_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService?.Navigate(new PreferencesPage());
         }
     }
 }

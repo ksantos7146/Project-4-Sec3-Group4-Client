@@ -67,15 +67,6 @@ namespace Project4_Client.Pages
                             : -1;
                     }
                     
-                    // Set state dropdown
-                    if (user.stateId != null)
-                    {
-                        int stateId = (int)user.stateId;
-                        StateComboBox.SelectedIndex = stateId - 1 >= 0 && stateId - 1 < StateComboBox.Items.Count 
-                            ? stateId - 1 
-                            : -1;
-                    }
-
                     // Load profile image if exists
                     if (user.images != null && user.images.Count > 0)
                     {
@@ -187,7 +178,6 @@ namespace Project4_Client.Pages
                         Email = EmailTextBox.Text,
                         Bio = BioTextBox.Text,
                         GenderId = GetGenderId(),
-                        StateId = GetStateId(),
                         Age = int.Parse(AgeTextBox.Text),
                         Password = PasswordBox.SecurePassword.Length > 0 
                             ? new System.Net.NetworkCredential(string.Empty, PasswordBox.SecurePassword).Password 
@@ -254,12 +244,6 @@ namespace Project4_Client.Pages
                 return false;
             }
 
-            if (StateComboBox.SelectedItem == null)
-            {
-                MessageBox.Show("Please select a state", "Validation Error", MessageBoxButton.OK, MessageBoxImage.Warning);
-                return false;
-            }
-
             if (!int.TryParse(AgeTextBox.Text, out int age) || age < 18 || age > 100)
             {
                 MessageBox.Show("Please enter a valid age (18-100)", "Validation Error", MessageBoxButton.OK, MessageBoxImage.Warning);
@@ -271,9 +255,8 @@ namespace Project4_Client.Pages
 
         private int GetGenderId()
         {
-            var selectedItem = GenderComboBox.SelectedItem as ComboBoxItem;
-            if (selectedItem == null) return 0;
-            return selectedItem.Content.ToString() switch
+            if (GenderComboBox.SelectedItem == null) return 0;
+            return (GenderComboBox.SelectedItem as ComboBoxItem)?.Content.ToString() switch
             {
                 "Male" => 1,
                 "Female" => 2,
@@ -282,19 +265,9 @@ namespace Project4_Client.Pages
             };
         }
 
-        private int GetStateId()
+        private void GoToLogin_Click(object sender, RoutedEventArgs e)
         {
-            var selectedItem = StateComboBox.SelectedItem as ComboBoxItem;
-            if (selectedItem == null) return 0;
-            return selectedItem.Content.ToString() switch
-            {
-                "Single" => 1,
-                "In a Relationship" => 2,
-                "Married" => 3,
-                "Divorced" => 4,
-                "Widowed" => 5,
-                _ => 0
-            };
+            _mainWindow.MainFrame.Navigate(new LoginPage(_mainWindow));
         }
     }
 }
