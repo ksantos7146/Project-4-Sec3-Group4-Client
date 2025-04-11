@@ -108,7 +108,7 @@ namespace Project4_Client.Pages {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Project4-Client;V1.0.0.0;component/pages/registerpage.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Project4-Client;component/pages/registerpage.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Pages\RegisterPage.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

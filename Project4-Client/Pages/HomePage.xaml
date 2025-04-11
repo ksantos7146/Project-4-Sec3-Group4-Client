@@ -19,6 +19,9 @@
             <Button x:Name="PreferencesButton" Content="Preferences" Width="80" Height="30" 
                     Background="#FF4081" Foreground="White" Margin="10,0,0,0" 
                     Click="PreferencesButton_Click"/>
+            <Button x:Name="LogoutButton" Content="Logout" Width="80" Height="30" 
+           Background="#FF4081" Foreground="White" Margin="975,0,0,0" 
+           Click="LogoutButton_Click"/>
         </StackPanel>
         
         <Grid Grid.Row="1">

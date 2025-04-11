@@ -215,12 +215,26 @@ namespace Project4_Client.Pages
                 }
                 else
                 {
-                    MessageBox.Show("Failed to save preferences.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    string errorMessage = "Failed to save preferences.";
+                    try
+                    {
+                        var errorResponse = JsonConvert.DeserializeObject<dynamic>(response.Content);
+                        if (errorResponse != null && errorResponse.message != null)
+                        {
+                            errorMessage = errorResponse.message.ToString();
+                        }
+                    }
+                    catch
+                    {
+                        // If we can't parse the error message, use the status code
+                        errorMessage = $"Failed to save preferences. Status: {response.StatusCode}";
+                    }
+                    MessageBox.Show(errorMessage, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show($"An error occurred: {ex.Message}\n\nPlease try again later.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 

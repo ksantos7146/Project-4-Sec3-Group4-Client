@@ -27,28 +27,29 @@ namespace Project4_Client.Pages
         private MainWindow _mainWindow;
         private string _authToken;
         private string _currentUserId;
-        private List<User> _allUsers;
-        private int _currentUserIndex;
+        private List<User> _allUsers = new List<User>();
+        private int _currentUserIndex = 0;
 
-        public HomePage()
+        public HomePage(MainWindow mw)
         {
             InitializeComponent();
-            _mainWindow = Application.Current.MainWindow as MainWindow;
-            InitializeData();
-        }
-
-        public HomePage(MainWindow mainWindow)
-        {
-            InitializeComponent();
-            _mainWindow = mainWindow;
-            InitializeData();
-        }
-
-        private void InitializeData()
-        {
+            _mainWindow = mw;
             _authToken = App.Current.Properties["AuthToken"]?.ToString() ?? string.Empty;
             _currentUserId = App.Current.Properties["UserId"]?.ToString() ?? string.Empty;
-            _currentUserIndex = 0;
+
+            if (string.IsNullOrEmpty(_authToken) || string.IsNullOrEmpty(_currentUserId))
+            {
+                MessageBox.Show("Authentication error. Please log in again.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                _mainWindow.MainFrame.Navigate(new LoginPage(_mainWindow));
+                return;
+            }
+
+            LoadUsers();
+            Loaded += HomePage_Loaded;
+        }
+
+        private void HomePage_Loaded(object sender, RoutedEventArgs e)
+        {
             LoadUsers();
         }
 
@@ -106,6 +107,11 @@ namespace Project4_Client.Pages
                     }
                     else
                     {
+                        // Clear the UI when no users match preferences
+                        NameTextBlock.Text = "";
+                        AgeTextBlock.Text = "";
+                        BioTextBlock.Text = "";
+                        ProfileImage.Source = new BitmapImage(new Uri("pack://application:,,,/Project4-Client;component/Resources/default-image.png", UriKind.Absolute));
                         MessageBox.Show("No users match your preferences.", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
                     }
                 }
@@ -123,7 +129,14 @@ namespace Project4_Client.Pages
         private void DisplayCurrentUser()
         {
             if (_allUsers == null || !_allUsers.Any() || _currentUserIndex < 0 || _currentUserIndex >= _allUsers.Count)
+            {
+                // Set default content when no users are available
+                NameTextBlock.Text = "";
+                AgeTextBlock.Text = "";
+                BioTextBlock.Text = "";
+                ProfileImage.Source = new BitmapImage(new Uri("pack://application:,,,/Project4-Client;component/Resources/default-image.png", UriKind.Absolute));
                 return;
+            }
 
             var user = _allUsers[_currentUserIndex];
             
@@ -158,12 +171,12 @@ namespace Project4_Client.Pages
                 catch (Exception ex)
                 {
                     MessageBox.Show($"Failed to load image: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    ProfileImage.Source = new BitmapImage(new Uri("pack://application:,,,/Project4-Client;component/Resources/default-image.png", UriKind.Absolute));
                 }
             }
             else
             {
-                // Set default image if no image is available
-                ProfileImage.Source = new BitmapImage(new Uri("/Assets/default-profile.png", UriKind.Relative));
+                ProfileImage.Source = new BitmapImage(new Uri("pack://application:,,,/Project4-Client;component/Resources/default-image.png", UriKind.Absolute));
             }
         }
 
@@ -316,6 +329,44 @@ namespace Project4_Client.Pages
             else
             {
                 MessageBox.Show("Navigation error: Cannot access main window.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+        private async void LogoutButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                // Set user state to offline
+                var client = new RestClient(AppConfig.ServerBaseUrl);
+                var request = new RestRequest($"api/users/{_currentUserId}/state", Method.Put);
+                request.AddHeader("Authorization", $"Bearer {_authToken}");
+                request.AddBody(2); // Send state ID directly as 2 (offline)
+
+                var response = await client.ExecuteAsync(request);
+                if (response.StatusCode != System.Net.HttpStatusCode.OK)
+                {
+                    MessageBox.Show("Failed to set offline status. You may still appear as online.", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
+
+                // Clear all stored authentication data
+                App.Current.Properties["AuthToken"] = null;
+                App.Current.Properties["UserId"] = null;
+                App.Current.Properties["Username"] = null;
+                
+                // Properties are automatically saved in WPF, no need for explicit save
+
+                // Navigate to login page
+                if (_mainWindow != null)
+                {
+                    _mainWindow.MainFrame.Navigate(new LoginPage(_mainWindow));
+                }
+                else
+                {
+                    MessageBox.Show("Navigation error: Cannot access main window.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error during logout: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
