@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\user\\Desktop\\Proj4\\Client\\Project4-Client\\Project4-Client.csproj": {}
+    "C:\\Users\\user\\Desktop\\Client\\Project4-Client\\Project4-Client.csproj": {}
   },
   "projects": {
-    "C:\\Users\\user\\Desktop\\Proj4\\Client\\Project4-Client\\Project4-Client.csproj": {
+    "C:\\Users\\user\\Desktop\\Client\\Project4-Client\\Project4-Client.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\Desktop\\Proj4\\Client\\Project4-Client\\Project4-Client.csproj",
+        "projectUniqueName": "C:\\Users\\user\\Desktop\\Client\\Project4-Client\\Project4-Client.csproj",
         "projectName": "Project4-Client",
-        "projectPath": "C:\\Users\\user\\Desktop\\Proj4\\Client\\Project4-Client\\Project4-Client.csproj",
+        "projectPath": "C:\\Users\\user\\Desktop\\Client\\Project4-Client\\Project4-Client.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\Desktop\\Proj4\\Client\\Project4-Client\\obj\\",
+        "outputPath": "C:\\Users\\user\\Desktop\\Client\\Project4-Client\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
